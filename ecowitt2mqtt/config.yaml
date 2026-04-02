@@ -1,0 +1,64 @@
+---
+# https://developers.home-assistant.io/docs/add-ons/configuration#add-on-config
+name: ecowitt2mqtt
+version: "2026.4.0"
+slug: ecowitt2mqtt
+description: >-
+  With jumpinf00l mods | A web server to send data from Fine Offset devices
+  (including white-labeled brands, like Ambient Weather and Ecowitt) to an
+  MQTT Broker
+url: "https://github.com/jumpinf00l/ecowitt2mqtt/tree/main/ecowitt2mqtt"
+license: MIT
+arch:
+  - aarch64
+  - amd64
+init: false
+startup: services
+boot: auto
+backup: cold
+services:
+  - "mqtt:want"
+ports:
+  "8080/tcp": 8080
+ports_description:
+  "8080/tcp": >-
+    The port the Ecowitt gateway will use to submit data to Home Assistant
+options:
+  boolean_battery_true_value: "1"
+  default_battery_strategy: numeric
+  diagnostics: false
+  disable_calculated_data: false
+  endpoint: /data/report
+  hass_discovery_prefix: homeassistant
+  input_data_format: ecowitt
+  input_unit_system: imperial
+  locale: en_US.UTF-8
+  mqtt_retain: true
+  output_unit_system: imperial
+  precision: 1
+  verbose: false
+schema:
+  boolean_battery_true_value: "list(0|1)"
+  default_battery_strategy: "list(boolean|numeric|percentage)"
+  diagnostics: "bool"
+  disable_calculated_data: "bool"
+  endpoint: "str?"
+  hass_discovery_prefix: "str?"
+  hass_entity_id_prefix: "str?"
+  input_data_format: "list(ambient_weather|ecowitt)"
+  input_unit_system: "list(imperial|metric)"
+  locale: "str?"
+  output_unit_system: "list(imperial|metric)"
+  mqtt_host: "str?"
+  mqtt_password: "password?"
+  mqtt_port: "port?"
+  mqtt_retain: "bool"
+  mqtt_username: "str?"
+  output_unit_accumulated_precipitation: "list(in|mm)?"
+  output_unit_distance: "list(cm|ft|in|km|m|mi|mm|yd)?"
+  output_unit_humidity: "list(g/m³|lbs/ft³)?"
+  output_unit_illuminance: "list(fc|kfc|klx|lx|W/m²|%)?"
+  output_unit_precipitation_rate: "list(in/h|mm/h)?"
+  output_unit_speed: "list(ft/s|in/d|in/h|km/h|kn|m/s|mph|mm/d)?"
+  precision: "int"
+  verbose: "bool"

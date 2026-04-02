@@ -1,0 +1,76 @@
+---
+configuration:
+  boolean_battery_true_value:
+    name: "Boolean battery true value"
+    description: >-
+      The value for which a boolean-type battery should be considered "on"
+  default_battery_strategy:
+    name: Default battery strategy
+    description: >-
+      The default strategy to use when encountering an unknown type of battery.
+  diagnostics:
+    name: Diagnostics
+    description: Log a diagnostics output and immediately exit the add-on.
+  disable_calculated_data:
+    name: Disable calculated data
+    description: >-
+      Disable the creation of calculated data points (e.g., wind chill, heat
+      index, etc.)
+  endpoint:
+    name: Endpoint
+    description: The relative WS View endpoint/path to serve ecowitt2mqtt on.
+  hass_discovery_prefix:
+    name: MQTT Discovery prefix
+    description: The MQTT Discovery prefix to use.
+  hass_entity_id_prefix:
+    name: Entity ID prefix
+    description: A string prefix to prepend on all generated entity IDs.
+  input_data_format:
+    name: Input data format
+    description: The incoming data format to use.
+  input_unit_system:
+    name: Input unit system
+    description: The incoming unit system to use.
+  mqtt_host:
+    name: MQTT host
+    description: The MQTT host to use (if not using MQTT add-on).
+  mqtt_password:
+    name: MQTT password
+    description: The MQTT password to use (if not using MQTT add-on).
+  mqtt_port:
+    name: MQTT port
+    description: The MQTT port to use (if not using MQTT add-on).
+  mqtt_retain:
+    name: MQTT retain
+    description: Whether to retain messages on the MQTT broker.
+  mqtt_username:
+    name: MQTT username
+    description: The MQTT username to use (if not using MQTT add-on).
+  output_unit_accumulated_precipitation:
+    name: Output unit for accumulated precipitation
+    description: >-
+      The unit system to use when outputting accumulated precipitation data.
+  output_unit_distance:
+    name: Output unit for distance
+    description: The unit system to use when outputting distance data.
+  output_unit_humidity:
+    name: Output unit for absolute humidity humidity
+    description: The unit system to use when outputting absolute humidity data.
+  output_unit_illuminance:
+    name: Output unit for illuminance
+    description: The unit system to use when outputting illuminance data.
+  output_unit_precipitation_rate:
+    name: Output unit for precipitation rate
+    description: The unit system to use when outputting precipitation rate data.
+  output_unit_speed:
+    name: Output unit for speed
+    description: The unit system to use when outputting speed data.
+  output_unit_system:
+    name: Output unit system
+    description: The unit system to use when outputting to MQTT.
+  precision:
+    name: Precision
+    description: The number of decimal points to round units to.
+  verbose:
+    name: Verbose
+    description: Enable verbose log output.
